@@ -1,9 +1,15 @@
 class ReactSchmoozer < Schmooze::Base
-  dependencies babel: 'babel-core'
-  dependencies React: 'react'
-  dependencies ReactDOMServer: 'react-dom/server'
+  dependencies React: 'react', ReactDOMServer: 'react-dom/server'
 
-  method :transpile, 'babel.transform'
-  method :create_element, 'React.createElement'
-  method :render_to_string, 'ReactDOMServer.renderToString'
+  method :render_component, <<-JS
+    function(path, props, children, babel) {
+      return ReactDOMServer.renderToString(
+        React.createElement(
+          require("../../app/assets/javascripts/" + path),
+          props,
+          children
+        )
+      )
+    }
+  JS
 end

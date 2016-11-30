@@ -1,11 +1,11 @@
+'use strict'
+
 const React = require('react');
 
 class Index extends React.Component {
   render() {
     return(
-      <div>
-        Hello React!!
-      </div>
+      React.createElement("div", {id: "index-component"}, "Hello!!!!!!!!!!!!")
     )
   }
 }

@@ -7,7 +7,8 @@ class User {
   static run(action) {
     if (action == "index") {
       ReactDOM.render(
-        <Index />, document.querySelector('#greet')
+        React.createElement(Index),
+        document.querySelector('#index-component')
       )
     }
   }

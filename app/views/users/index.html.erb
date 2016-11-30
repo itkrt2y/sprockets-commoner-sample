@@ -2,10 +2,9 @@
 
 <h1>Users</h1>
 
+<%= render_component("users/index") %>
+
 <div id="greet"></div>
-<% if false %>
-<%= SSR.new("users/index").render %>
-<% end %>
 
 <table>
   <thead>
